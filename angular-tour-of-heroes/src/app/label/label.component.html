@@ -1,0 +1,12 @@
+<div class="label">
+    <div>
+        <!--<span class="label_text">{{text}}</span>--> 
+        <span>*</span>
+    </div>
+    <div>
+        <input id="holaInput"
+         name="holaInput"
+         [(ngModel)]="text"
+         (ngModelChange)="onChangeText($event)">
+    </div>
+</div>
