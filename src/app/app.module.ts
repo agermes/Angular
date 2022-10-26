@@ -10,6 +10,7 @@ import { LabelComponent } from './label/label.component';
 import { MessagesComponent } from './messages/messages.component'; // <--- NgModel Lives here
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,15 @@ import { HttpClientModule } from '@angular/common/http';
     HeroDetailComponent,
     LabelComponent,
     MessagesComponent,
+    DashboardComponent,
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

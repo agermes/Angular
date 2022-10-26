@@ -3,12 +3,9 @@
   <div>
     <ul class="heroes">
       <li *ngFor="let hero of heroes">
-        <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
-          <span class="badge">{{hero.id}}</span>
-          <span class="name">{{hero.name}}</span>
-          <app-label [(text)]="hero.name"> </app-label>
-          <!--Doble binding input-output-->
-        </button>
+        <a routerLink="/detail/{{hero.id}}">
+          <span class="badge">{{hero.id}}</span> {{hero.name}}
+        </a>
       </li>
     </ul>
   </div>
@@ -21,9 +18,6 @@
     </ul>
   </div>
 </div>
-
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
-
 <div *ngIf="selectedHero">
   <h2>{{selectedHero.name | uppercase}} Details</h2>
   <div>id: {{selectedHero.id}}</div>
