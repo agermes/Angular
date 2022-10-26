@@ -1,21 +1,34 @@
 <h2>My Heroes</h2>
-<ul class="heroes">
-    <li *ngFor="let hero of heroes">
+<div>
+  <div>
+    <ul class="heroes">
+      <li *ngFor="let hero of heroes">
         <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
           <span class="badge">{{hero.id}}</span>
           <span class="name">{{hero.name}}</span>
-          <app-label [text]="hero.name" (textChange) = "hero.name = $event"> </app-label>
+          <app-label [(text)]="hero.name"> </app-label>
+          <!--Doble binding input-output-->
         </button>
       </li>
-</ul>
+    </ul>
+  </div>
+  <div>
+    <ul class="users">
+      <li *ngFor="let user of users">
+        <!-- <app-label [(text)]="user.name"> </app-label> -->
+        <span>{{user?.email}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
 
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
 <div *ngIf="selectedHero">
-    <h2>{{selectedHero.name | uppercase}} Details</h2>
-    <div>id: {{selectedHero.id}}</div>
-    <div>
-        <label for="hero-name">Hero name: </label>
-        <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
-    </div>
+  <h2>{{selectedHero.name | uppercase}} Details</h2>
+  <div>id: {{selectedHero.id}}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+  </div>
 </div>

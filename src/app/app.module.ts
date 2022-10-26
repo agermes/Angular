@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { LabelComponent } from './label/label.component';
 import { MessagesComponent } from './messages/messages.component'; // <--- NgModel Lives here
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,11 +17,14 @@ import { MessagesComponent } from './messages/messages.component'; // <--- NgMod
     HeroesComponent,
     HeroDetailComponent,
     LabelComponent,
-    MessagesComponent
+    MessagesComponent,
+    
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
