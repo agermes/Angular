@@ -25,9 +25,9 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHeroes();
-    //  this.getUsers();
-    // this.getUsersPromise();
-    // this.getUsersPromiseAsync();
+     this.getUsers();
+    this.getUsersPromise();
+    this.getUsersPromiseAsync();
   }
 
   getUsers(): void {
@@ -44,11 +44,11 @@ export class HeroesComponent implements OnInit {
   //   })
   // }
 
-  // getUsersPromise(): void {
-  //   this.userService.getUsersPromise().then(data => {
-  //     this.users = data;
-  //   });
-  // }
+  getUsersPromise(): void {
+    this.userService.getUsersPromise().then(data => {
+      this.users = data;
+    });
+  }
 
   //  // Async (Para coger el error hacer un try catch)
   //  async getUsersPromiseAsync() {
@@ -56,9 +56,9 @@ export class HeroesComponent implements OnInit {
   //     this.users = await this.http.get(url).toPromise();
   //   }
 
-  // async getUsersPromiseAsync(): Promise<void> {
-  //  this.users = await this.userService.getUsersPromiseAsync();
-  // }
+  async getUsersPromiseAsync(): Promise<void> {
+   this.users = await this.userService.getUsersPromiseAsync();
+  }
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { firstValueFrom, Observable, of } from 'rxjs';
 import { User } from '../models/user.model';
 import { HEROES } from '../mock-heroes';
 
@@ -26,10 +26,10 @@ export class UserService {
   //   })
   // }
 
-  // getUsersPromise(): Promise<User[]> {
-  //   const url = 'https://jsonplaceholder.typicode.com/users';
-  //   return this.http.get<User[]>(url).toPromise();
-  // }
+  getUsersPromise(): Promise<User[]> {
+    const url = 'https://jsonplaceholder.typicode.com/users';
+    return firstValueFrom(this.http.get<User[]>(`$(url)/api/myAPI`));
+  }
 
 
 
@@ -39,8 +39,8 @@ export class UserService {
   //     this.users = await this.http.get(url).toPromise();
   //   }
 
-  // getUsersPromiseAsync(): Promise<User[]> {
-  //   const url = 'https://jsonplaceholder.typicode.com/users';
-  //   return this.http.get<User[]>(url).toPromise();
-  // }
+  getUsersPromiseAsync(): Promise<User[]> {
+    const url = 'https://jsonplaceholder.typicode.com/users';
+    return firstValueFrom(this.http.get<User[]>(`$(url)/api/myAPI`));
+  }
 }
