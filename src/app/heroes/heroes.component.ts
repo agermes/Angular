@@ -13,11 +13,11 @@ import { User } from '../models/user.model';
 })
 export class HeroesComponent implements OnInit {
 
-  selectedHero?: Hero;
+  selectedHero: Hero;
   heroes: Hero[] = [];
 
   name = 'hero';
-  users?: User[];
+  users: User[];
 
   constructor(private heroService: HeroService, private messageService: MessageService, private userService: UserService) {
 
