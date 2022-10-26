@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     HeroDetailComponent,
     LabelComponent,
     MessagesComponent,
-    
+
   ],
   imports: [
     BrowserModule,

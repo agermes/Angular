@@ -14,17 +14,14 @@ import { User } from '../models/user.model';
 export class HeroesComponent implements OnInit {
 
   selectedHero?: Hero;
-
   heroes: Hero[] = [];
 
   name = 'hero';
   users?: User[];
 
-
   constructor(private heroService: HeroService, private messageService: MessageService, private userService: UserService) {
 
   }
-
 
   ngOnInit(): void {
     this.getHeroes();
@@ -39,7 +36,7 @@ export class HeroesComponent implements OnInit {
     });
   }
 
-  //   // Evitar then
+  // Evitar then
   // getUsersPromise() {
   //   const url = 'https://jsonplaceholder.typicode.com/users';
   //   this.http.get(url).toPromise().then(data => {
@@ -62,7 +59,6 @@ export class HeroesComponent implements OnInit {
   // async getUsersPromiseAsync(): Promise<void> {
   //  this.users = await this.userService.getUsersPromiseAsync();
   // }
-
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;

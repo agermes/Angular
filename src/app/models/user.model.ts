@@ -6,7 +6,6 @@ export class UserModel {
   phone?: string;
 }
 
-
 export interface User {
   id?: number;
   name?: string;
@@ -16,8 +15,8 @@ export interface User {
   phone?: string;
   website?: string;
   company?: UserCompany;
-
 }
+
 interface UserAddress {
 
   street?: string;
@@ -25,12 +24,12 @@ interface UserAddress {
   city?: string,
   zipcode?: string;
   geo?: UserAddressGeo
-   
-  }
-  interface UserAddressGeo{
-    lat?: string;
-    lng?: string;
-  }
+}
+
+interface UserAddressGeo {
+  lat?: string;
+  lng?: string;
+}
 
 interface UserCompany {
   name?: string;
