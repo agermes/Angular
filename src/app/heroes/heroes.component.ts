@@ -5,6 +5,7 @@ import { MessageService } from '../message.service';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from '../Services/user.service';
 import { User } from '../models/user.model';
+import { heroTypeNames } from '../constants/hero.constants';
 
 @Component({
   selector: 'app-heroes',
@@ -14,10 +15,11 @@ import { User } from '../models/user.model';
 export class HeroesComponent implements OnInit {
 
   selectedHero: Hero;
-  heroes: Hero[] = [];
+  heroes: Hero[];
 
   name = 'hero';
   users: User[];
+  heroTypeNames = heroTypeNames;
 
   constructor(private heroService: HeroService, private messageService: MessageService, private userService: UserService) {
 
