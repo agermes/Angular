@@ -27,7 +27,7 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHeroes();
-     this.getUsers();
+    this.getUsers();
     this.getUsersPromise();
     this.getUsersPromiseAsync();
   }
@@ -59,7 +59,7 @@ export class HeroesComponent implements OnInit {
   //   }
 
   async getUsersPromiseAsync(): Promise<void> {
-   this.users = await this.userService.getUsersPromiseAsync();
+    this.users = await this.userService.getUsersPromiseAsync();
   }
 
   onSelect(hero: Hero): void {
@@ -69,5 +69,14 @@ export class HeroesComponent implements OnInit {
 
   getHeroes(): void {
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+  }
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.heroService.addHero({ name } as Hero)
+    .subscribe(hero => {
+      this.heroes.push(hero);
+    });
   }
 }
