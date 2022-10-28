@@ -2,10 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Hero } from '../../models/hero.model';
 import { HeroService } from '../../Services/hero.service';
 import { MessageService } from '../../Services/message.service';
-import { HttpClient } from '@angular/common/http';
 import { UserService } from '../../Services/user.service';
 import { User } from '../../models/user.model';
-import { heroTypeNames } from '../../constants/hero.constants';
+
 
 @Component({
   selector: 'app-heroes',
@@ -13,13 +12,10 @@ import { heroTypeNames } from '../../constants/hero.constants';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
-  // @Input() typeId: number | undefined;
-
   selectedHero: Hero;
   heroes: Hero[];
   name = 'hero';
   users: User[];
-  heroTypeNames = heroTypeNames;
 
   constructor(private heroService: HeroService, private messageService: MessageService, private userService: UserService) {
 

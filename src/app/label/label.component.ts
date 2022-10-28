@@ -13,6 +13,7 @@ export class LabelComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   onChangeText(text: string): void {
     this.textChange.emit(text);
   }
