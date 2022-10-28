@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { FormsModule } from '@angular/forms';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { LabelComponent } from './label/label.component';
 import { MessagesComponent } from './messages/messages.component'; // <--- NgModel Lives here
 import { CommonModule } from '@angular/common';
@@ -12,8 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService} from './Services/in-memory-data.service';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
-import { HeroTypeComponent } from './hero-type/hero-type.component';
+import { HeroSearchComponent } from './components/hero-search/hero-search.component';
+import { HeroTypeComponent } from './components/hero-type/hero-type.component';
 
 @NgModule({
   declarations: [

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { heroTypeNames } from '../constants/hero.constants';
+import { heroTypeNames } from '../../constants/hero.constants';
 
 @Component({
   selector: 'app-hero-type',
