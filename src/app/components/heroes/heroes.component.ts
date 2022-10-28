@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Hero } from '../../models/hero.model';
 import { HeroService } from '../../Services/hero.service';
 import { MessageService } from '../../Services/message.service';
@@ -13,10 +13,10 @@ import { heroTypeNames } from '../../constants/hero.constants';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
+  // @Input() typeId: number | undefined;
 
   selectedHero: Hero;
   heroes: Hero[];
-
   name = 'hero';
   users: User[];
   heroTypeNames = heroTypeNames;
@@ -75,8 +75,12 @@ export class HeroesComponent implements OnInit {
     name = name.trim();
     if (!name) { return; }
     this.heroService.addHero({ name } as Hero)
-    .subscribe(hero => {
-      this.heroes.push(hero);
-    });
+      .subscribe(hero => {
+        this.heroes.push(hero);
+      });
+  }
+  delete(hero: Hero): void {
+    this.heroes = this.heroes.filter(h => h !== hero);
+    this.heroService.deleteHero(hero.id).subscribe();
   }
 }
