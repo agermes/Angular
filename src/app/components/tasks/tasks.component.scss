@@ -1,0 +1,53 @@
+.tasks {
+  &_list {
+      &_user {
+      font-weight: bold;
+      font-size: larger;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &_id {
+      font-size: larger;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &_title {
+      font-size: larger;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.completed {
+  border: solid;
+  border-width: 3px;
+  border-color: black;
+  position: relative;
+  background-color: lightgreen;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uncompleted {
+  border: solid;
+  border-width: 3px;
+  border-color: black;
+  position: relative;
+  background-color: lightcoral;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

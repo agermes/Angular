@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Hero } from '../../models/hero.model';
-import { HeroService } from '../../Services/hero.service';
-import { MessageService } from '../../Services/message.service';
-import { UserService } from '../../Services/user.service';
+import { HeroService } from '../../services/hero.service';
+import { MessageService } from '../../services/message.service';
+import { UserService } from '../../services/user.service';
 import { User } from '../../models/user.model';
 
 

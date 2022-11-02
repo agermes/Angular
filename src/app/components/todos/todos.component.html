@@ -1,15 +1,7 @@
-<h2>ToDos:</h2>
-<div>
-  <ul class="todos">
-    <li *ngFor="let toDo of toDos" [class]="toDo?.completed ? 'todos-completed': 'todos-incompleted'">
-        <span class="todos-admin" *ngIf="toDo.userId==1"> ADMINSTRADOR </span>
-        <span class="todos-mod" *ngIf="toDo.userId==2"> MODERADOR </span>
-        <div class="todos-list">
-          <span class="todos-list-userid">UserId: {{toDo?.userId}}</span>
-          <span class="todos-list-id">Id: {{toDo?.id}}</span>
-          <span class="todos-list-title">Title: {{toDo?.title}}</span>
-          <span class="todos-list-completed">Completed: {{toDo?.completed}}</span>
-        </div>
-    </li>
+<div class="todos">
+  <h2 class="todos_title">ToDos:
+  </h2>
+  <ul class="todos_list">
+    <app-tasks></app-tasks>
   </ul>
 </div>

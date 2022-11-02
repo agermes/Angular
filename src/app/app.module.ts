@@ -11,10 +11,11 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService} from './Services/in-memory-data.service';
+import { InMemoryDataService} from './services/in-memory-data.service';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 import { HeroTypeComponent } from './components/hero-type/hero-type.component';
 import { TodosComponent } from './components/todos/todos.component';
+import { TasksComponent } from './components/tasks/tasks.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TodosComponent } from './components/todos/todos.component';
     HeroSearchComponent,
     HeroTypeComponent,
     TodosComponent,
+    TasksComponent,
 
   ],
   imports: [

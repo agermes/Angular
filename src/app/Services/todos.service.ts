@@ -1,7 +1,6 @@
-
 import { ToDo } from '../models/toDos.model';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { firstValueFrom, Observable, of } from 'rxjs';
 import { MessageService } from './message.service'; 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs';
@@ -38,10 +37,8 @@ export class TodosService {
     };
   }
 
-  gettoDo(): Observable<ToDo[]> {
-    return this.http.get<ToDo[]>(this.todosUrl)
-      .pipe(tap(_ => this.log('fetched ToDos')),
-        catchError(this.handleError<ToDo[]>('getToDos'))
-      );
+  getToDo(): Promise<ToDo[]> {
+    const url = 'https://jsonplaceholder.typicode.com/todos';
+    return firstValueFrom(this.http.get<ToDo[]>(`$(url)/api/myAPI`));
   }
 }

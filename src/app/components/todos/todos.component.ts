@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TODOS } from 'src/app/mock-heroes';
-import { ToDo } from 'src/app/models/toDos.model';
-import { TodosService } from 'src/app/Services/todos.service';
-import { MessageService } from 'src/app/Services/message.service';
+import { TODOS } from 'src/app/mock-todos';
+import { TodosService } from 'src/app/services/todos.service';
+import { MessageService } from 'src/app/services/message.service';
+import { userTypeNames } from 'src/app/constants/todo.constants';
 
 @Component({
   selector: 'app-todos',
@@ -10,17 +10,18 @@ import { MessageService } from 'src/app/Services/message.service';
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit {
+  @Input() userId: number | undefined;
 
   toDos = TODOS;
+  userTypeNames = userTypeNames;
 
-  constructor(private todoService: TodosService, private messageService: MessageService) { }
+  constructor(private todosService: TodosService, private messageService: MessageService) { }
 
   ngOnInit(): void {
-    this.gettoDos();
+    this.getToDos();
   }
   
-  gettoDos(): void {
-    this.todoService.gettoDo().subscribe(toDos => this.toDos = toDos);
-    return;
+  async getToDos(): Promise<void> {
+    this.toDos = await this.todosService.getToDo();
   }
 }
