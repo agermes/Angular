@@ -19,7 +19,7 @@ export class HeroService {
   }
 
   private heroesUrl = 'api/heroes'; //URL to web api
-
+  private usersUrl ='api/users'; 
 
   // Handle Http operation that failes
   // Let the app continue

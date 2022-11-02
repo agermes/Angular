@@ -6,6 +6,7 @@ import { User } from '../models/user.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
 
   constructor(private http: HttpClient) {
@@ -29,8 +30,6 @@ export class UserService {
     const url = 'https://jsonplaceholder.typicode.com/users';
     return firstValueFrom(this.http.get<User[]>(`$(url)/api/myAPI`));
   }
-
-
 
   //  // Async (Para coger el error hacer un try catch)
   //  async getUsersPromiseAsync() {

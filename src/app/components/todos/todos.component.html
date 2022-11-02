@@ -1,34 +1,15 @@
-<h2>ToDos</h2>
+<h2>ToDos:</h2>
 <div>
   <ul class="todos">
-    <li *ngFor="let toDo of toDos" [class]="toDo?.completed ? 'completed': 'incompleted'">
-      <span class="todos-admin" *ngIf="toDo.userId==1"> Administrador </span>
-      <span class="todos-mod" *ngIf="toDo.userId==2"> Moderador </span>
-      <span class="todos-list-userid">UserId: {{toDo?.userId}}</span>
-      <span class="todos-list-id">Id: {{toDo?.id}}</span>
-      <span class="todos-list-title">Title: {{toDo?.title}}</span>
-      <span class="todos-list-completed">Completed: {{toDo?.completed}}</span>
+    <li *ngFor="let toDo of toDos" [class]="toDo?.completed ? 'todos-completed': 'todos-incompleted'">
+        <span class="todos-admin" *ngIf="toDo.userId==1"> ADMINSTRADOR </span>
+        <span class="todos-mod" *ngIf="toDo.userId==2"> MODERADOR </span>
+        <div class="todos-list">
+          <span class="todos-list-userid">UserId: {{toDo?.userId}}</span>
+          <span class="todos-list-id">Id: {{toDo?.id}}</span>
+          <span class="todos-list-title">Title: {{toDo?.title}}</span>
+          <span class="todos-list-completed">Completed: {{toDo?.completed}}</span>
+        </div>
     </li>
   </ul>
 </div>
-
-<!-- 
-<div>
-  <ul class="todos">
-    <li *ngFor="let toDo of toDos" [class]="toDo?.completed ? 'completed': 'incompleted'">
-      <app-todos></app-todos>
-    </li>
-  </ul>
-</div> -->
-
-<!-- 
-<div>
-  <ul *ngFor="let toDo of toDos" [class]="toDo?.completed ? 'completed': 'incompleted'">
-    <li class="todos-admin" *ngIf="toDo.userId==1"> Administrador </li>
-    <li class="todos-mod" *ngIf="toDo.userId==2"> Moderador </li>
-    <li class="todos-list-userid">UserId: {{toDo?.userId}}</li>
-    <li class="todos-list-id">Id: {{toDo?.id}}</li>
-    <li class="todos-list-title">Title: {{toDo?.title}}</li>
-    <li class="todos-list-completed">Completed: {{toDo?.completed}}</li>
-  </ul>
-</div> -->
