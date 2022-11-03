@@ -2,11 +2,9 @@
   &_title {
     font-weight: bold;
   }
+}
 
-  &_list {
-    margin: 0 0 2em 0;
+.flex-container {
     list-style-type: none;
-    width: 30em;
     display: flex;
   }
-}
