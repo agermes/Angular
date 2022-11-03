@@ -2,11 +2,11 @@
   display: flex;
   flex-flow: row wrap;
   
-
   &_list {
     flex-wrap: wrap;
     width: 200px;
     height: 200px;
+    
       &_user {
       font-weight: bold;
       font-size: larger;

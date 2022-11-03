@@ -12,6 +12,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TasksComponent implements OnInit {
   @Input() userId: number | undefined;
+  @Input() id: number | undefined;
+  @Input() title: string;
 
   tasks = TODOS;
   userTypeNames = userTypeNames;
