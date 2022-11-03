@@ -1,7 +1,7 @@
-<div class="flex-container">
-  <div class="flex-container_list" *ngFor="let task of tasks" [class]="task?.completed ? 'completed' : 'uncompleted'">
-    <div class="flex-container_list_user" *ngIf="task.userId"> {{userTypeNames[task.userId]}}</div>
-    <div class="flex-container_list_id"> Id: {{[task.id]}}</div>
-    <div class="flex-container_list_title">Title: {{[task.title]}}</div>
+<div class="task">
+  <div class="task_list" *ngFor="let task of tasks" [class]="task?.completed ? 'completed' : 'uncompleted'">
+    <div class="task_list_user" *ngIf="task.userId"> {{userTypeNames[task.userId]}}</div>
+    <div class="task_list_id"> Id: {{[task.id]}}</div>
+    <div class="task_list_title">Title: {{[task.title]}}</div>
   </div>
 </div>
