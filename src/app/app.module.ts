@@ -1,3 +1,5 @@
+import { SharedModule } from './shared/shared.module';
+import { TasksModule } from './tasks/tasks.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,11 +13,9 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService} from './services/in-memory-data.service';
+import { InMemoryDataService} from './shared/services/in-memory-data.service';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 import { HeroTypeComponent } from './components/hero-type/hero-type.component';
-import { TodosComponent } from './components/todos/todos.component';
-import { TasksComponent } from './components/tasks/tasks.component';
 
 @NgModule({
   declarations: [
@@ -27,16 +27,15 @@ import { TasksComponent } from './components/tasks/tasks.component';
     DashboardComponent,
     HeroSearchComponent,
     HeroTypeComponent,
-    TodosComponent,
-    TasksComponent,
 
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     CommonModule,
     HttpClientModule,
     AppRoutingModule,
+    TasksModule,
+    SharedModule,
 
 // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
 // and returns simulated server responses.

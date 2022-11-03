@@ -1,16 +1,16 @@
-import { MessageService } from './../../services/message.service';
-import { TodosService } from './../../services/todos.service';
-import { userTypeNames } from 'src/app/constants/todo.constants';
-import { TODOS } from './../../mock-todos';
+import { MessageService } from 'src/app/shared/services/message.service';
+import { TodosService } from 'src/app/shared/services/todos.service';
+import { TODOS } from 'src/app/mock-todos';
+import { userTypeNames } from 'src/app/tasks/constants/todo.constants';
 import { Component, OnInit, Input } from '@angular/core';
 
 
 @Component({
-  selector: 'app-tasks',
-  templateUrl: './tasks.component.html',
-  styleUrls: ['./tasks.component.scss']
+  selector: 'app-task',
+  templateUrl: './task.component.html',
+  styleUrls: ['./task.component.scss']
 })
-export class TasksComponent implements OnInit {
+export class TaskComponent implements OnInit {
   @Input() userId: number | undefined;
   @Input() id: number | undefined;
   @Input() title: string;

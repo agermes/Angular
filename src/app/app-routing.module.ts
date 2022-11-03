@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
-import { TodosComponent } from './components/todos/todos.component';
+import { TodosComponent } from './tasks/components/todos/todos.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },

@@ -1,4 +1,4 @@
-import { ToDo } from '../models/toDos.model';
+import { ToDo } from '../../models/toDos.model';
 import { Injectable } from '@angular/core';
 import { firstValueFrom, Observable, of } from 'rxjs';
 import { MessageService } from './message.service'; 

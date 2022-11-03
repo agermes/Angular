@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TODOS } from 'src/app/mock-todos';
-import { TodosService } from 'src/app/services/todos.service';
-import { MessageService } from 'src/app/services/message.service';
-import { userTypeNames } from 'src/app/constants/todo.constants';
+import { TodosService } from 'src/app/shared/services/todos.service';
+import { MessageService } from 'src/app/shared/services/message.service';
+import { userTypeNames } from 'src/app/tasks/constants/todo.constants';
 
 @Component({
   selector: 'app-todos',
