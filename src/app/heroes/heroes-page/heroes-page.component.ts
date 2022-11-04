@@ -9,8 +9,8 @@ import { heroTypeNames } from '../../tasks/constants/hero.constants';
 
 @Component({
   selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.scss']
+  templateUrl: './heroes-page.component.html',
+  styleUrls: ['./heroes-page.component.scss']
 })
 export class HeroesComponent implements OnInit {
   selectedHero: Hero;
