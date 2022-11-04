@@ -1,7 +1,7 @@
 import { TODOS } from 'src/app/mock-todos';
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Hero } from '../../models/hero.model';
+import { Hero } from '../../tasks/models/hero.model';
 
 @Injectable({
   providedIn: 'root',

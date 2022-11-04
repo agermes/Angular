@@ -1,4 +1,4 @@
-import { ToDo } from '../../models/toDos.model';
+import { ToDos } from '../../tasks/models/toDos.model';
 import { Injectable } from '@angular/core';
 import { firstValueFrom, Observable, of } from 'rxjs';
 import { MessageService } from './message.service'; 
@@ -37,8 +37,8 @@ export class TodosService {
     };
   }
 
-  getToDo(): Promise<ToDo[]> {
-    const url = 'https://jsonplaceholder.typicode.com/todos';
-    return firstValueFrom(this.http.get<ToDo[]>(`$(url)/api/myAPI`));
+  getToDo(): Promise<ToDos[]> {
+    const url = 'api/toDos';
+    return firstValueFrom(this.http.get<ToDos[]>(url));
   }
 }

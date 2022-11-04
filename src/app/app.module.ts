@@ -6,11 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
 import { HeroesComponent } from './tasks/components/heroes/heroes.component';
 import { HeroDetailComponent } from './tasks/components/hero-detail/hero-detail.component'; 
-import { LabelComponent } from './label/label.component';
+import { LabelComponent } from './tasks/components/label/label.component';
 import { MessagesComponent } from './messages/messages.component'; // <--- NgModel Lives here
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './tasks/components/dashboard/dashboard.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService} from './shared/services/in-memory-data.service';
 import { HeroSearchComponent } from './tasks/components/hero-search/hero-search.component';

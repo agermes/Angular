@@ -3,15 +3,12 @@
   flex-wrap: wrap;
 
   &_list {
-    width: 200px;
-    height: 200px;
+    width: 30%;
     border: solid;
-    border-radius: 15%;
+    border-radius: 15px;
     border-width: 5px;
     border-color: black;
     margin: 10px;
-    display: flex;
-    flex-direction: column;
 
     &_user {
       font-weight: bold;
@@ -23,12 +20,12 @@
 
     &_id {
       font-size: larger;
-      margin: 5px;
+      margin: 10px;
     }
 
     &_title {
       font-size: larger;
-      margin: 5px;
+      margin: 10px;
     }
   }
 }

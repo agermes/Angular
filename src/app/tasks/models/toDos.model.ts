@@ -1,4 +1,4 @@
-export interface ToDo {
+export interface ToDos {
   userId: number;
   id?: number;
   title?: string;

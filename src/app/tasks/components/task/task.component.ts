@@ -1,8 +1,5 @@
-import { MessageService } from 'src/app/shared/services/message.service';
-import { TodosService } from 'src/app/shared/services/todos.service';
-import { TODOS } from 'src/app/mock-todos';
 import { userTypeNames } from 'src/app/tasks/constants/todo.constants';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -13,18 +10,17 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TaskComponent implements OnInit {
   @Input() userId: number | undefined;
   @Input() id: number | undefined;
-  @Input() title: string;
-
-  tasks = TODOS;
+  @Input() title: string | undefined;
+  @Input() completed : boolean | undefined;
   userTypeNames = userTypeNames;
 
-  constructor(private todosService: TodosService, private messageService: MessageService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getTasks();
+    // this.getTasks();
   }
   
-  async getTasks(): Promise<void> {
-    this.tasks = await this.todosService.getToDo();
-  }
+  // async getTasks(): Promise<void> {
+  //   this.tasks = await this.todosService.getToDo();
+  // }
 }

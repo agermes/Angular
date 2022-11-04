@@ -1,7 +1,7 @@
 <div class="task">
-  <div class="task_list" *ngFor="let task of tasks" [class]="task?.completed ? 'completed' : 'uncompleted'">
-    <div class="task_list_user" *ngIf="task.userId"> {{userTypeNames[task.userId]}}</div>
-    <div class="task_list_id"> Id: {{[task.id]}}</div>
-    <div class="task_list_title">Title: {{[task.title]}}</div>
+  <div class="task_list" [ngClass]="{completed: completed , uncompleted: !completed}">
+    <div class="task_list_user" *ngIf="userId"> {{userTypeNames[userId]}}</div>
+    <div class="task_list_id"> Id: {{id}}</div>
+    <div class="task_list_title">Title: {{title}}</div>
   </div>
 </div>

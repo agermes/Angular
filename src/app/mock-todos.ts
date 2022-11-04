@@ -1,6 +1,6 @@
-import { ToDo } from "./models/toDos.model" 
+import { ToDos } from "./tasks/models/toDos.model" 
 
-export const TODOS: ToDo[] = [
+export const TODOS: ToDos[] = [
   {
     "userId": 1,
     "id": 1,

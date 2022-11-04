@@ -1,7 +1,14 @@
-<div class="todos">
+<!-- <div class="todos">
   <h2 class="todos_title">ToDos:
   </h2>
   <ul class="todos-container">
     <app-task></app-task>
   </ul>
+</div> -->
+
+<div class="todos">
+  <h2 class="todos_title">ToDos:</h2>
+  <div *ngFor="let todo of toDos" class="todos_container">
+    <app-task [id]="todo.id" [userId]="todo.userId" [title]="todo.title" [completed]="todo.completed"></app-task>
+  </div>
 </div>
