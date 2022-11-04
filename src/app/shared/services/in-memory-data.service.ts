@@ -1,4 +1,4 @@
-import { TODOS } from 'src/app/mock-todos';
+import { TODOS } from 'src/app/shared/mocks/mock-todos';
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Hero } from '../../tasks/models/hero.model';

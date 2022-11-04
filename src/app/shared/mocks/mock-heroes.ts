@@ -1,4 +1,4 @@
-import { Hero } from './tasks/models/hero.model';
+import { Hero } from '../../tasks/models/hero.model';
 
 export const HEROES: Hero[] = [
   { id: 12, name: 'Dr. Nice' },

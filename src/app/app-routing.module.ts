@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeroesComponent } from './tasks/components/heroes/heroes.component';
-import { DashboardComponent } from './tasks/components/dashboard/dashboard.component';
-import { HeroDetailComponent } from './tasks/components/hero-detail/hero-detail.component'; 
+import { HeroesComponent } from './heroes-page/heroes/heroes.component';
+import { DashboardComponent } from './heroes-page/dashboard/dashboard.component';
+import { HeroDetailComponent } from './heroes-page/hero-detail/hero-detail.component';
 import { TodosComponent } from './tasks/components/todos/todos.component';
 
 const routes: Routes = [
@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'detail/:id', component: HeroDetailComponent },
-  { path: 'todos', component: TodosComponent}
+
+  { path: 'tasks', loadChildren: () => import('./tasks/tasks.module').then(m => m.TasksModule) },
 
 ];
 

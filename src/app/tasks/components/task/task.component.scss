@@ -1,32 +1,27 @@
 .task {
-  display: flex;
-  flex-wrap: wrap;
+  height: 200px;
+  border: solid;
+  border-radius: 15px;
+  border-width: 5px;
+  border-color: black;
+  margin: 10px;
 
-  &_list {
-    width: 30%;
-    border: solid;
-    border-radius: 15px;
-    border-width: 5px;
-    border-color: black;
+  &_user {
+    font-weight: bold;
+    font-size: larger;
+    text-decoration-line: underline;
+    margin: 15px;
+    text-align: center;
+  }
+
+  &_id {
+    font-size: larger;
     margin: 10px;
+  }
 
-    &_user {
-      font-weight: bold;
-      font-size: larger;
-      text-decoration-line: underline;
-      margin: 15px;
-      text-align: center;
-    }
-
-    &_id {
-      font-size: larger;
-      margin: 10px;
-    }
-
-    &_title {
-      font-size: larger;
-      margin: 10px;
-    }
+  &_title {
+    font-size: larger;
+    margin: 10px;
   }
 }
 

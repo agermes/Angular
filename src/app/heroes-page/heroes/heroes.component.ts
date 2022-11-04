@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Hero } from '../../models/hero.model';
-import { HeroService } from '../../../shared/services/hero.service';
-import { MessageService } from '../../../shared/services/message.service';
-import { UserService } from '../../../shared/services/user.service';
-import { User } from '../../models/user.model';
+import { Hero } from '../../tasks/models/hero.model';
+import { HeroService } from '../../shared/services/hero.service';
+import { MessageService } from '../../shared/services/message.service';
+import { UserService } from '../../shared/services/user.service';
+import { User } from '../../tasks/models/user.model';
+import { heroTypeNames } from '../../tasks/constants/hero.constants';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[];
   name = 'hero';
   users: User[];
+  newHero = new Hero();
 
   constructor(private heroService: HeroService, private messageService: MessageService, private userService: UserService) {
 
@@ -78,5 +80,9 @@ export class HeroesComponent implements OnInit {
   delete(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero.id).subscribe();
+  }
+  onClickAddHero() : void{
+    this.add(this.newHero.name);
+    this.newHero.name = '';
   }
 }
