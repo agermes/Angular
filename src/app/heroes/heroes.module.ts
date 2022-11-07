@@ -7,6 +7,7 @@ import { HeroTypeComponent } from './components/hero-type/hero-type.component';
 import { LabelComponent } from './components/label/label.component';
 import { HeroesComponent } from './components/heroes-page/heroes-page.component';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,12 +16,14 @@ import { HeroSearchComponent } from './components/hero-search/hero-search.compon
     HeroTypeComponent,
     HeroesComponent,
     LabelComponent,
-    HeroSearchComponent,
+    HeroSearchComponent
   ],
   imports: [
     CommonModule,
     HeroesRoutingModule,
     SharedModule,
+    ReactiveFormsModule
+
   ],
   exports: [
     HeroSearchComponent,
