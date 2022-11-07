@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Hero } from '../../tasks/models/hero.model';
-import { HeroService } from '../../shared/services/hero.service';
-import { MessageService } from '../../shared/services/message.service';
-import { UserService } from '../../shared/services/user.service';
-import { User } from '../../tasks/models/user.model';
-import { heroTypeNames } from '../../tasks/constants/hero.constants';
+import { Hero } from '../../models/hero.model';
+import { HeroService } from '../../../shared/services/hero.service';
+import { MessageService } from '../../../shared/services/message.service';
+import { UserService } from '../../../shared/services/user.service';
+import { User } from '../../models/user.model';
+import { heroTypeNames } from '../../constants/hero.constants';
 
 
 @Component({
