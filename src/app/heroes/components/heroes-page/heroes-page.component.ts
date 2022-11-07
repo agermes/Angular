@@ -1,10 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Hero } from '../../models/hero.model';
 import { HeroService } from '../../../shared/services/hero.service';
 import { MessageService } from '../../../shared/services/message.service';
 import { UserService } from '../../../shared/services/user.service';
 import { User } from '../../models/user.model';
-import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, Validators, ReactiveFormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-heroes',
@@ -12,6 +12,17 @@ import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./heroes-page.component.scss']
 })
 export class HeroesComponent implements OnInit {
+  @ViewChild('createHero') createHeroForm: NgForm;
+
+  displayModal: boolean;
+
+  showModalDialog() {
+    this.displayModal = true;
+    console.log(this.displayModal);
+
+}
+
+
   selectedHero: Hero;
   heroes: Hero[];
   name = 'hero';
@@ -21,6 +32,7 @@ export class HeroesComponent implements OnInit {
   constructor(private heroService: HeroService, private messageService: MessageService, private userService: UserService, private formBuilder: FormBuilder) {
 
   }
+
 
   checkoutForm = this.formBuilder.group(
     {
@@ -86,9 +98,9 @@ export class HeroesComponent implements OnInit {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero.id).subscribe();
   }
-  // onClickAddHero() : void{
+  // onSubmit() : void{
   //   this.add(this.newHero.name);
-  //   this.newHero.name = '';
+  //   this.createHeroForm.reset();
   // }
 
   onSubmit(): void {
@@ -96,6 +108,8 @@ export class HeroesComponent implements OnInit {
       this.add(this.checkoutForm.value.name);
       console.warn('Submitted: ', this.checkoutForm.value);
       this.checkoutForm.reset();
+      this.displayModal = false;
+      console.log(this.displayModal);
     }
   }
 }

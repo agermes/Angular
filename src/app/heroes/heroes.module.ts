@@ -8,6 +8,9 @@ import { LabelComponent } from './components/label/label.component';
 import { HeroesComponent } from './components/heroes-page/heroes-page.component';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { TabViewModule } from 'primeng/tabview';
+import { DialogModule } from 'primeng/dialog';
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     HeroesRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DialogModule,
+    TabViewModule,
+    ButtonModule
 
   ],
   exports: [

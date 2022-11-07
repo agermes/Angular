@@ -14,7 +14,7 @@ export class UserService {
   }
 
   getUsers(): Observable<User[]> {
-    const url = 'https://jsonplaceholder.typicode.com/users';
+    const url = 'api/users';
     return this.http.get<User[]>(url);
   };
 
@@ -27,8 +27,8 @@ export class UserService {
   // }
 
   getUsersPromise(): Promise<User[]> {
-    const url = 'https://jsonplaceholder.typicode.com/users';
-    return firstValueFrom(this.http.get<User[]>(`$(url)/api/myAPI`));
+    const url = 'api/users';
+    return firstValueFrom(this.http.get<User[]>(url));
   }
 
   //  // Async (Para coger el error hacer un try catch)
@@ -38,7 +38,7 @@ export class UserService {
   //   }
 
   getUsersPromiseAsync(): Promise<User[]> {
-    const url = 'https://jsonplaceholder.typicode.com/users';
-    return firstValueFrom(this.http.get<User[]>(`$(url)/api/myAPI`));
+    const url = 'api/users';
+    return firstValueFrom(this.http.get<User[]>(url));
   }
 }
