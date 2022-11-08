@@ -1,4 +1,7 @@
 /* HeroSearch private styles */
+.search-component{
+  margin: 1em;
+}
 
 label {
   display: block;
@@ -14,6 +17,7 @@ input {
   max-width: 600px;
   box-sizing: border-box;
   display: block;
+  border-radius: 40px;
 }
 
 input:focus {

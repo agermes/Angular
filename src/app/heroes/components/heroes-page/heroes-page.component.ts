@@ -109,7 +109,7 @@ export class HeroesComponent implements OnInit {
       console.warn('Submitted: ', this.checkoutForm.value);
       this.checkoutForm.reset();
       this.displayModal = false;
-      console.log(this.displayModal);
+      this.createHeroForm.resetForm();
     }
   }
 }

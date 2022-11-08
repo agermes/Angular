@@ -1,62 +1,57 @@
-<h2>My Heroes</h2>
+<div class="row title">
+  <div class="col-12">
+    <h2>My Heroes</h2>
+  </div>
+</div>
 <div>
-  <div>
-    <p-button (click)="showModalDialog()" icon="pi pi-external link" label="Add Hero"></p-button>
-    <p-dialog header="Add Hero" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
-      [resizable]="false">
-      <form #createHeroForm="ngForm" id="heroesCreateForm" name="heroesCreateForm" [formGroup]="checkoutForm"
-        (ngSubmit)="onSubmit()">
-        <label for="new-hero">Hero name: </label>
-        <input type="text" id="new-hero" formControlName="name">
-        <button type="submit" class="add-button" [disabled]="checkoutForm.invalid">
-          Add hero
-        </button>
-      </form>
-      <ng-template pTemplate="footer">
-        <p-button icon="pi pi-check" (click)="displayModal=false; " label="Cancelar" styleClass="p-button-text">
-        </p-button>
-      </ng-template>
-    </p-dialog>
-
-    <!-- <form #createHeroForm="ngForm" id="heroesCreateForm" name="heroesCreateForm" [formGroup]="checkoutForm"
-      (ngSubmit)="onSubmit()">
-      <label for="new-hero">Hero name: </label>
-      <input type="text" id="new-hero" formControlName="name">     
-      <button type="submit" class="add-button" [disabled]="checkoutForm.invalid">
-        Add hero
-      </button>
-    </form> -->
+  <div class="row addHero">
+    <div class="col-12">
+      <p-button (click)="showModalDialog()" icon="pi pi-external link" label="Add Hero"></p-button>
+      <p-dialog header="Add Hero" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+        [draggable]="false" [resizable]="false">
+        <form #createHeroForm="ngForm" id="heroesCreateForm" name="heroesCreateForm" [formGroup]="checkoutForm"
+          (ngSubmit)="onSubmit()">
+          <label for="new-hero">Hero name: </label>
+          <input type="text" id="new-hero" formControlName="name">
+          <button type="submit" class="add-button" [disabled]="checkoutForm.invalid">
+            Add hero
+          </button>
+        </form>
+        <ng-template pTemplate="footer">
+          <p-button icon="pi pi-check" (click)="displayModal=false; " label="Cancelar" styleClass="p-button-text">
+          </p-button>
+        </ng-template>
+      </p-dialog>
+    </div>
   </div>
 
   <div>
-    <ul class="heroes">
-      <li *ngFor="let hero of heroes">
+    <ul class="row heroes">
+      <li class="col-sm-12 col-md-6 col-lg-3 " *ngFor="let hero of heroes">
         <a routerLink="/detail/{{hero.id}}">
           <span class="badge">{{hero.id}}</span> {{hero.name}}
-          <!-- <span *ngIf="hero.typeId"> - {{heroTypeNames[hero.typeId]}}</span> -->
           <app-hero-type [typeId]="hero.typeId"></app-hero-type>
         </a>
-        <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
+        <button type="button" class="delete" title="delete hero" (click)="delete(hero)">X</button>
       </li>
     </ul>
   </div>
 
-  <div>
+  <!-- <div>
     <ul class="users">
       <li *ngFor="let user of users">
-        <!-- <app-label [(text)]="user.name"> </app-label> -->
         <span>{{user?.email}}</span>
       </li>
     </ul>
   </div>
-</div>
+</div> -->
 
-<div *ngIf="selectedHero">
-  <h2>{{selectedHero.name | uppercase}} Details</h2>
-  <div>id: {{selectedHero.id}}</div>
+  <div *ngIf="selectedHero">
+    <h2>{{selectedHero.name | uppercase}} Details</h2>
+    <div>id: {{selectedHero.id}}</div>
 
-  <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+    <div>
+      <label for="hero-name">Hero name: </label>
+      <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+    </div>
   </div>
-</div>
