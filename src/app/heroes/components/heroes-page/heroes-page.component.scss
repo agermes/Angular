@@ -1,68 +1,88 @@
 /* HeroesComponent's private CSS styles */
-.heroes {
+.heroes-page {
   list-style-type: none;
-}
 
-.title{
-  margin: 2em;
-}
+  &_myHeroes {
+    margin: 30px;
+    display: flex;
 
-.addHero{
-  margin: 2em;
-}
+    &_addHero {
+      margin-left: 40px;
+    }
+  }
 
-.heroes li {
-  position: relative;
-  cursor: pointer;
-}
+  &_container {
+    margin-left: 5px;
+    // background-color: var(--color-1-light);
+    // border-radius: 4px;
 
-.heroes li:hover {
-  left: .1em;
-}
+    &_hero {
+      display: flex;
 
-.heroes a {
-  color: #333;
-  text-decoration: none;
-  background-color: lightblue;
-  margin: .5em;
-  padding: .3em 0;
-  height: 3.3em;
-  border-radius: 4px;
-  display: block;
-  width: 300px;
-}
+      &_delete {
+        margin: 5px;
+        font-size: smaller;
+        border-radius: 4px;
+        height: 50px;
+        width: 50px;
+        background-color: var(--color-4);
+        color: var(--color-3-white);
 
-.heroes a:hover {
-  color: white;
-  background-color: rgb(44, 110, 172);
-}
+        &:hover {
+          background-color: var(--color-2);
+          color: var(--color-3-white);
+        }
 
-.heroes a:active {
-  background-color: #525252;
-  color: #fafafa;
-}
+        &:active {
+          background-color: var(--color-2-dark);
+          color: var(--color-3-white);
+        }
+      }
 
-.heroes button{
-  margin: .8em;
-  font-size: smaller;
-  border-radius: 15%;
-  height: 50px;
-  width: 50px;
-}
+      &:hover {
+        left: 10px;
+      }
 
-.heroes .badge {
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color: #405061;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 4em;
-  min-width: 16px;
-  text-align: right;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
+      &_items {
+        color: var(--color-3-white);;
+        text-decoration: none;
+        background-color: var(--color-1);
+        margin: 10px;
+        padding: 5px 0;
+        height: 40px;
+        border-radius: 4px;
+        display: block;
+        width: 80%;
+
+        &:hover {
+          color: var(--color-3-white);;
+          background-color: var(--color-1-dark);
+        }
+
+        &:active {
+          background-color: var(--color-3-grey);
+          color: var(--color-3-white);
+        }
+
+        &_id {
+          display: inline-block;
+          font-size: small;
+          color: var(--color-3-white);
+          padding: 0.8em 0.7em 0 0.7em;
+          background-color: var(--color-4);
+          line-height: 1em;
+          position: relative;
+          line-height: 1em;
+          position: relative;
+          left: -1px;
+          top: -5px;
+          height: 40px;
+          min-width: 16px;
+          text-align: right;
+          margin-right: 0.8em;
+          border-radius: 4px 0 0 4px;
+        }
+      }
+    }
+  }
 }

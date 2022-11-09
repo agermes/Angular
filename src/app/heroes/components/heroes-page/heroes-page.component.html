@@ -1,21 +1,17 @@
-<div class="row title">
-  <div class="col-12">
+<div class="heroes-page">
+
+  <div class="heroes-page_myHeroes">
     <h2>My Heroes</h2>
-  </div>
-</div>
-<div>
-  <div class="row addHero">
-    <div class="col-12">
-      <p-button (click)="showModalDialog()" icon="pi pi-external link" label="Add Hero"></p-button>
-      <p-dialog header="Add Hero" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
-        [draggable]="false" [resizable]="false">
+    <div class="row heroes-page_myHeroes_addHero">
+      <p-button class="heroes-page_myHeroes_addHero_button" (click)="showModalDialog()" icon="pi pi-external link"
+        label="Add Hero"></p-button>
+      <p-dialog class="heroes-page_myHeroes_addHero_dialog" header="Add Hero" [(visible)]="displayModal" [modal]="true"
+        [style]="{width: '50vw'}" [draggable]="false" [resizable]="false">
         <form #createHeroForm="ngForm" id="heroesCreateForm" name="heroesCreateForm" [formGroup]="checkoutForm"
           (ngSubmit)="onSubmit()">
           <label for="new-hero">Hero name: </label>
           <input type="text" id="new-hero" formControlName="name">
-          <button type="submit" class="add-button" [disabled]="checkoutForm.invalid">
-            Add hero
-          </button>
+          <button type="submit" class="add-button" [disabled]="checkoutForm.invalid">Add Hero</button>
         </form>
         <ng-template pTemplate="footer">
           <p-button icon="pi pi-check" (click)="displayModal=false; " label="Cancelar" styleClass="p-button-text">
@@ -25,26 +21,27 @@
     </div>
   </div>
 
-  <div>
-    <ul class="row heroes">
-      <li class="col-sm-12 col-md-6 col-lg-3 " *ngFor="let hero of heroes">
-        <a routerLink="/detail/{{hero.id}}">
-          <span class="badge">{{hero.id}}</span> {{hero.name}}
-          <app-hero-type [typeId]="hero.typeId"></app-hero-type>
-        </a>
-        <button type="button" class="delete" title="delete hero" (click)="delete(hero)">X</button>
-      </li>
-    </ul>
+  <div class="row heroes-page_container">
+    <div class="col-12 col-md-6 col-lg-3 heroes-page_container_hero" *ngFor="let hero of heroes">
+      <a class="heroes-page_container_hero_items" routerLink="/detail/{{hero.id}}">
+        <span class="heroes-page_container_hero_items_id">{{hero.id}}</span>
+        <span class="heroes-page_container_hero_items_name">{{hero.name}}</span>
+        <app-hero-type [typeId]="hero.typeId"></app-hero-type>
+      </a>
+      <button type="button" class="heroes-page_container_hero_delete" title="delete hero"
+        (click)="delete(hero)">X</button>
+    </div>
   </div>
 
+
   <!-- <div>
-    <ul class="users">
-      <li *ngFor="let user of users">
-        <span>{{user?.email}}</span>
-      </li>
-    </ul>
-  </div>
-</div> -->
+      <ul class="users">
+        <li *ngFor="let user of users">
+          <span>{{user?.email}}</span>
+        </li>
+      </ul>
+    </div>
+  </div> -->
 
   <div *ngIf="selectedHero">
     <h2>{{selectedHero.name | uppercase}} Details</h2>
@@ -55,3 +52,4 @@
       <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
     </div>
   </div>
+</div>
