@@ -1,4 +1,8 @@
 /* HeroDetailComponent's private CSS styles */
+.heroDetail{
+  margin: 1em;
+}
+
 label {
   color: #435960;
   font-weight: bold;
@@ -7,6 +11,8 @@ label {
 input {
   font-size: 1em;
   padding: .5rem;
+  margin-left: 10px;
+  border-radius: 40px;
 }
 
 button {
@@ -15,6 +21,7 @@ button {
   padding: 1rem;
   border-radius: 4px;
   font-size: 1rem;
+  margin-right: 10px;
 }
 
 button:hover {

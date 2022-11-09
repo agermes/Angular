@@ -1,9 +1,11 @@
 .todos {
   &_title {
     font-weight: bold;
+    margin: 1em;
   }
 
   &_container {
+    margin: 1em;
     display: flex;
     flex-wrap: wrap;
 
