@@ -37,18 +37,21 @@
   </div>
 
   <div class="d-flex justify-content-center alig-items-center heroes-page_table">
-    <p-table [value]="heroes" [paginator]="true" [rows]="5" [showCurrentPageReport]="true"  [resizableColumns]="true" styleClass="p-datatable-gridlines"
-      [tableStyle]="{'min-width': '50rem'}"
+    <p-table [value]="heroes" selectionMode="multiple" [paginator]="true" [rows]="5" [resizableColumns]="true"
+      styleClass="p-datatable-gridlines" [tableStyle]="{'min-width': '50rem'}"
       currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[5,10,20]">
       <ng-template pTemplate="header">
         <tr>
-          <th pResizableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
-          <th pResizableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
-          <th pResizableColumn="type">Type <p-sortIcon field="type"></p-sortIcon></th>
+          <th pResizableColumn="id" pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon>
+          </th>
+          <th pResizableColumn="name" pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon>
+          </th>
+          <th pResizableColumn="type" pSortableColumn="type">Type <p-sortIcon field="type"></p-sortIcon>
+          </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-hero>
-        <tr>
+        <tr [pSelectableRow]="hero">
           <td>{{hero.id}}</td>
           <td>{{hero.name}}</td>
           <td>

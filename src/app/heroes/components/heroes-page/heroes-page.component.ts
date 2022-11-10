@@ -10,8 +10,20 @@ import { SortEvent } from 'primeng/api';
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes-page.component.html',
-  styleUrls: ['./heroes-page.component.scss']
+  styleUrls: ['./heroes-page.component.scss'],
+  styles: [`
+  :host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0rem;
+  }
+
+  .layout-news-active :host ::ng-deep .p-datatable tr > th {
+      top: 0rem;
+  }
+`]
 })
+
 export class HeroesComponent implements OnInit {
   @ViewChild('createHero') createHeroForm: NgForm;
 
