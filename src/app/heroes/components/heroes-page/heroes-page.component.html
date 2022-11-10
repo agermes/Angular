@@ -1,20 +1,23 @@
 <div class="heroes-page">
 
   <div class="heroes-page_myHeroes">
-    <h2>My Heroes</h2>
+    <h2 class="heroes-page_myHeroes_title">My Heroes</h2>
     <div class="row heroes-page_myHeroes_addHero">
-      <p-button class="heroes-page_myHeroes_addHero_button" (click)="showModalDialog()" icon="pi pi-external link"
+      <p-button class="heroes-page_myHeroes_addHero_pbutton" (click)="showModalDialog()" icon="pi pi-external link"
         label="Add Hero"></p-button>
       <p-dialog class="heroes-page_myHeroes_addHero_dialog" header="Add Hero" [(visible)]="displayModal" [modal]="true"
         [style]="{width: '50vw'}" [draggable]="false" [resizable]="false">
-        <form #createHeroForm="ngForm" id="heroesCreateForm" name="heroesCreateForm" [formGroup]="checkoutForm"
-          (ngSubmit)="onSubmit()">
-          <label for="new-hero">Hero name: </label>
-          <input type="text" id="new-hero" formControlName="name">
-          <button type="submit" class="add-button" [disabled]="checkoutForm.invalid">Add Hero</button>
+        <form class="heroes-page_myHeroes_addHero_dialog_form" #createHeroForm="ngForm" id="heroesCreateForm"
+          name="heroesCreateForm" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+          <label class="heroes-page_myHeroes_addHero_dialog_form_label" for="new-hero">Hero name: </label>
+          <input class="heroes-page_myHeroes_addHero_dialog_form_input" type="text" id="new-hero"
+            formControlName="name">
+          <button type="submit" class="heroes-page_myHeroes_addHero_dialog_form_addButton"
+            [disabled]="checkoutForm.invalid">Add Hero</button>
         </form>
-        <ng-template pTemplate="footer">
-          <p-button icon="pi pi-check" (click)="displayModal=false; " label="Cancelar" styleClass="p-button-text">
+        <ng-template class="heroes-page_myHeroes_addHero_dialog_template" pTemplate="footer">
+          <p-button class="heroes-page_myHeroes_addHero_dialog_template_pbutton" icon="pi pi-check"
+            (click)="displayModal=false; " label="Cancelar" styleClass="p-button-text">
           </p-button>
         </ng-template>
       </p-dialog>

@@ -1,49 +1,44 @@
 /* AppComponent's private CSS styles */
-h1 {
-  
-  margin: 1em;
+.app {
+  &_title {
+    margin: 30px;
+    text-align: center;
+  }
 
-}
-nav{
-  background-color: rgb(203, 212, 218);
-  margin: 1em;
-  border-radius: 40px;
-  border-color: black;
-  
-}
+  &_nav {
+    background-color: var(--color-3-grey);
+    margin: 30px;
+    border-radius: 40px;
 
-nav a {
-  text-align: center;
-  font-size: large;
-  font-weight: bold;
-  padding: 1rem;
-  text-decoration: none;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #e8e8e8;
-  color: #3d3d3d;
-  border-radius: 40px;
-  margin-right: 4px;
-  margin-left: 4px;
-  // width: 100%;
-  min-width: 70px;
-  margin: .5rem auto;
-  box-sizing: border-box;
-}
+    &_a {
+      text-align: center;
+      font-size: large;
+      font-weight: bold;
+      padding: 1rem;
+      text-decoration: none;
+      margin-top: 10px;
+      display: inline-block;
+      background-color: var(--color-3-lightgrey);
+      color: var(--color-3-grey);
+      border-radius: 40px;
+      margin-right: 4px;
+      margin-left: 4px;
+      min-width: 70px;
+      margin: 0.5rem auto;
+      box-sizing: border-box;
 
-nav a:hover {
-  color: white;
-  background-color: #42545C;
-}
+      &:hover {
+        color: var(--color-3-black);
+        background-color: var(--color-1-light);
+      }
 
-nav a:active {
-  background-color: black;
-}
+      &:active {
+        background-color: var(--color-1);
+      }
+    }
+  }
 
-.heroSearch{
-  margin: 1em;
-}
-
-.messages{
-  margin: 1em;
+  &_messages {
+    margin: 30px;
+  }
 }

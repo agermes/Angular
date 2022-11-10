@@ -6,6 +6,10 @@
     margin: 30px;
     display: flex;
 
+    &_title{
+      font-weight: bold;
+    }
+
     &_addHero {
       margin-left: 40px;
     }
@@ -13,8 +17,6 @@
 
   &_container {
     margin-left: 5px;
-    // background-color: var(--color-1-light);
-    // border-radius: 4px;
 
     &_hero {
       display: flex;
@@ -44,7 +46,7 @@
       }
 
       &_items {
-        color: var(--color-3-white);;
+        color: var(--color-3-white);
         text-decoration: none;
         background-color: var(--color-1);
         margin: 10px;
@@ -55,7 +57,7 @@
         width: 80%;
 
         &:hover {
-          color: var(--color-3-white);;
+          color: var(--color-3-white);
           background-color: var(--color-1-dark);
         }
 
