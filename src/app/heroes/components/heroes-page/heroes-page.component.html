@@ -29,12 +29,36 @@
       <a class="heroes-page_container_hero_items" routerLink="/detail/{{hero.id}}">
         <span class="heroes-page_container_hero_items_id">{{hero.id}}</span>
         <span class="heroes-page_container_hero_items_name">{{hero.name}}</span>
-        <app-hero-type [typeId]="hero.typeId"></app-hero-type>
+        <span *ngIf="hero.typeId"> - <app-hero-type [typeId]="hero.typeId"></app-hero-type></span>
       </a>
       <button type="button" class="heroes-page_container_hero_delete" title="delete hero"
         (click)="delete(hero)">X</button>
     </div>
   </div>
+
+  <div class="d-flex justify-content-center alig-items-center heroes-page_table">
+    <p-table [value]="heroes" [paginator]="true" [rows]="5" [showCurrentPageReport]="true"  [resizableColumns]="true" styleClass="p-datatable-gridlines"
+      [tableStyle]="{'min-width': '50rem'}"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[5,10,20]">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pResizableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
+          <th pResizableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+          <th pResizableColumn="type">Type <p-sortIcon field="type"></p-sortIcon></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-hero>
+        <tr>
+          <td>{{hero.id}}</td>
+          <td>{{hero.name}}</td>
+          <td>
+            <app-hero-type [typeId]="hero.typeId"></app-hero-type>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
 
 
   <!-- <div>

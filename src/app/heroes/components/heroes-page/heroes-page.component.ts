@@ -5,6 +5,7 @@ import { MessageService } from '../../../shared/services/message.service';
 import { UserService } from '../../../shared/services/user.service';
 import { User } from '../../models/user.model';
 import { FormBuilder, Validators, ReactiveFormsModule, NgForm } from '@angular/forms';
+import { SortEvent } from 'primeng/api';
 
 @Component({
   selector: 'app-heroes',
@@ -20,8 +21,7 @@ export class HeroesComponent implements OnInit {
     this.displayModal = true;
     console.log(this.displayModal);
 
-}
-
+  }
 
   selectedHero: Hero;
   heroes: Hero[];
@@ -29,10 +29,11 @@ export class HeroesComponent implements OnInit {
   users: User[];
   newHero = new Hero();
 
+  first = 0;
+  rows = 10;
+
   constructor(private heroService: HeroService, private messageService: MessageService, private userService: UserService, private formBuilder: FormBuilder) {
-
   }
-
 
   checkoutForm = this.formBuilder.group(
     {
@@ -112,4 +113,21 @@ export class HeroesComponent implements OnInit {
       this.createHeroForm.resetForm();
     }
   }
+
+  prev() {
+    this.first = this.first - this.rows;
+  }
+
+  reset() {
+    this.first = 0;
+  }
+
+  isLastPage(): boolean {
+    return this.heroes ? this.first === (this.heroes.length - this.rows) : true;
+  }
+
+  isFirstPage(): boolean {
+    return this.heroes ? this.first === 0 : true;
+  }
+
 }

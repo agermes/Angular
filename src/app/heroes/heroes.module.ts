@@ -11,7 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { TabViewModule } from 'primeng/tabview';
 import { DialogModule } from 'primeng/dialog';
-
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { DialogModule } from 'primeng/dialog';
     ReactiveFormsModule,
     DialogModule,
     TabViewModule,
-    ButtonModule
+    ButtonModule,
+    TableModule
 
   ],
   exports: [
