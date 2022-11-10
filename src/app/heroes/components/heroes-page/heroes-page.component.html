@@ -1,7 +1,7 @@
 <div class="heroes-page">
 
   <div class="heroes-page_myHeroes">
-    <h2 class="heroes-page_myHeroes_title">My Heroes</h2>
+    <h2 class="row heroes-page_myHeroes_title">My Heroes</h2>
     <div class="row heroes-page_myHeroes_addHero">
       <p-button class="heroes-page_myHeroes_addHero_pbutton" (click)="showModalDialog()" icon="pi pi-external link"
         label="Add Hero"></p-button>
@@ -46,13 +46,12 @@
     </div>
   </div> -->
 
-  <div *ngIf="selectedHero">
-    <h2>{{selectedHero.name | uppercase}} Details</h2>
-    <div>id: {{selectedHero.id}}</div>
-
-    <div>
-      <label for="hero-name">Hero name: </label>
-      <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+  <div class="selectedHero" *ngIf="selectedHero">
+    <h2 class="selectedHero_title">{{selectedHero.name | uppercase}} Details</h2>
+    <div class="selectedHero_details">
+      <span class="selectedHero_details_id">Id: {{selectedHero.id}} </span>
+      <label class="selectedHero_details_label" for="hero-name">Hero name: </label>
+      <input class="selectedHero_details_name" id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
     </div>
   </div>
 </div>

@@ -3,15 +3,17 @@
   list-style-type: none;
 
   &_myHeroes {
-    margin: 30px;
     display: flex;
-
+    
     &_title{
+      margin: 30px;
       font-weight: bold;
     }
 
     &_addHero {
-      margin-left: 40px;
+      margin-top: 30px;
+      margin-left: 10px;
+      margin-bottom: 30px;
     }
   }
 

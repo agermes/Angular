@@ -1,11 +1,12 @@
-<div class="row d-flex flex-row justify-content-center alig-items-center">
-  <h2 class="col-3">Top Heroes</h2>
+<div class="dashboard">
+  <div class="row dashboard_title">
+    <h2 class="col-12 d-flex flex-row justify-content-center alig-items-center dashboard_title_text">Top Heroes</h2>
+  </div>
+  <div class="row dashboard_heroesMenu">
+    <a class="col-2 d-flex flex-row justify-content-center alig-items-center dashboard_heroesMenu_items"
+      *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}">
+      <span class="dashboard_heroesMenu_items_name"> {{hero.name}} </span>
+    </a>
+  </div>
+  <app-hero-search></app-hero-search>
 </div>
-<div class="heroes-menu">
-  <a *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}">
-    {{hero.name}}
-  </a>
-</div>
-
-
-<app-hero-search></app-hero-search>

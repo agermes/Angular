@@ -28,12 +28,12 @@
       box-sizing: border-box;
 
       &:hover {
-        color: var(--color-3-black);
-        background-color: var(--color-1-light);
+        color: var(--color-3-white);
+        background-color: var(--color-1);
       }
 
       &:active {
-        background-color: var(--color-1);
+        background-color: var(--color-1-dark);
       }
     }
   }
