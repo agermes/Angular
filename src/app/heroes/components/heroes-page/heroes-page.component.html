@@ -38,8 +38,7 @@
 
   <div class="d-flex justify-content-center alig-items-center heroes-page_table">
     <p-table [value]="heroes" selectionMode="multiple" [paginator]="true" [rows]="5" [resizableColumns]="true"
-      styleClass="p-datatable-gridlines" [tableStyle]="{'min-width': '50rem'}"
-      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[5,10,20]">
+      styleClass="p-datatable-gridlines" [tableStyle]="{'min-width': '50rem'}" [rowsPerPageOptions]="[5,10,20]">
       <ng-template pTemplate="header">
         <tr>
           <th pResizableColumn="id" pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon>

@@ -5,7 +5,6 @@ import { MessageService } from '../../../shared/services/message.service';
 import { UserService } from '../../../shared/services/user.service';
 import { User } from '../../models/user.model';
 import { FormBuilder, Validators, ReactiveFormsModule, NgForm } from '@angular/forms';
-import { SortEvent } from 'primeng/api';
 
 @Component({
   selector: 'app-heroes',
